@@ -102,6 +102,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>kubernatives-devops-nagarro-assignment</finalName>
 	</build>
 
 </project>
