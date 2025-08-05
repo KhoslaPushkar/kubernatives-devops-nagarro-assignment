@@ -6,6 +6,11 @@ metadata:
     kubectl.kubernetes.io/default-container: "kubernatives-devops-nagarro-assignment"
 spec:
   replicas: 4
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
   selector:
     matchLabels:
       app: kubernatives-devops-nagarro-assignment

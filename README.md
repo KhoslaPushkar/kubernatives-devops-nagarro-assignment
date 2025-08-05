@@ -82,6 +82,7 @@ kubectl apply -f k8s/app/ingress.yaml
 - `k8s/app/` – Kubernetes manifests for API tier
 - `k8s/db/` – Kubernetes manifests for PostgreSQL database
 - `Dockerfile` – Container build instructions
+- `.github/workflows/` –  This folder contains GitHub Actions YAML **(docker-build-push.yaml)** file that automate the CI/CD process. It builds the Docker image from your source code and pushes it to Docker Hub automatically whenever any changes are made to the code.
 
 ---
 
