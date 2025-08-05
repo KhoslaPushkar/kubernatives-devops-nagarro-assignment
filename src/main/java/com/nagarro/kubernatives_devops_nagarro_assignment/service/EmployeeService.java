@@ -18,19 +18,30 @@ import com.nagarro.kubernatives_devops_nagarro_assignment.utils.Department;
 import com.nagarro.kubernatives_devops_nagarro_assignment.utils.ResponseHelper;
 
 /**
- * @author pushkarkhosla
- *
+ * Service class for handling business logic related to Employee operations.
+ * Provides methods to retrieve all employees and to create sample employee
+ * data.
+ * 
+ * Author: pushkarkhosla
  */
 @Service
 public class EmployeeService {
 
+	/**
+	 * Logger instance for logging method calls and exceptions.
+	 */
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
+	/**
+	 * Repository instance for performing database operations on EmployeeEntity.
+	 */
 	@Autowired
 	private EmployeeRepository employeeRepository;
 
 	/**
-	 * @return
+	 * Retrieves all employee records from the database.
+	 * 
+	 * @return ResponseHelper containing the list of employees or error information.
 	 */
 	public ResponseHelper getAllEmployees() {
 		try {
@@ -43,6 +54,11 @@ public class EmployeeService {
 		}
 	}
 
+	/**
+	 * Creates and saves a list of sample employee records into the database.
+	 * 
+	 * @return ResponseHelper indicating success or failure of the operation.
+	 */
 	public ResponseHelper createSampleData() {
 		try {
 			List<EmployeeEntity> sampleList = new ArrayList<>();
@@ -66,5 +82,4 @@ public class EmployeeService {
 			return getErrorResponse(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
-
 }

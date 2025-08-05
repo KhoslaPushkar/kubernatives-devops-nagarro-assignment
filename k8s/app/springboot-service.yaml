@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubernatives-devops-nagarro-assignment
+  labels:
+    app: kubernatives-devops-nagarro-assignment
+spec:
+  selector:
+    app: kubernatives-devops-nagarro-assignment
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 6161
+  type: ClusterIP

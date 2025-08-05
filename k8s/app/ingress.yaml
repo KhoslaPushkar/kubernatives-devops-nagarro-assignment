@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kubernatives-devops-nagarro-assignment-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: 34.58.153.8.nip.io
+      http:
+        paths:
+          - path: /employee
+            pathType: Prefix
+            backend:
+              service:
+                name: kubernatives-devops-nagarro-assignment
+                port:
+                  number: 80

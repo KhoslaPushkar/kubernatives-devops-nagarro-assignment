@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernatives-devops-nagarro-assignment
+  annotations:
+    kubectl.kubernetes.io/default-container: "kubernatives-devops-nagarro-assignment"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubernatives-devops-nagarro-assignment
+  template:
+    metadata:
+      labels:
+        app: kubernatives-devops-nagarro-assignment
+    spec:
+      containers:
+        - name: kubernatives-devops-nagarro-assignment
+          image: pushkarkhosla379/kubernatives-devops-nagarro-assignment:latest
+          env:
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config
+                  key: DB_HOST
+            - name: DB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config
+                  key: DB_PORT
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config
+                  key: DB_NAME
+            - name: DB_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config
+                  key: DB_USERNAME
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: DB_PASSWORD
+          ports:
+            - containerPort: 6161
