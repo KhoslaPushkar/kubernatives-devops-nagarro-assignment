@@ -1,12 +1,12 @@
 # Kubernatives DevOps Nagarro Assignment
 
-This repository contains a Spring Boot microservice application for managing employee records, designed for deployment on Kubernetes. The project demonstrates DevOps practices including containerization, orchestration, and persistent data management.
+This is a Spring Boot microservice for managing employee records. It's built to run on Kubernetes and shows how to use DevOps practices like containerization, orchestration, and managing data that needs to be saved.
 
 ---
 
 ## 📦 Code Repository
 
-- **GitHub Repository:** [kubernatives-devops-nagarro-assignment](https://github.com/pushkarkhosla379/kubernatives-devops-nagarro-assignment)
+- **GitHub Repository:** [kubernatives-devops-nagarro-assignment](https://github.com/KhoslaPushkar/kubernatives-devops-nagarro-assignment)
 
 ---
 
@@ -19,8 +19,7 @@ This repository contains a Spring Boot microservice application for managing emp
 ## 🌐 Service API Tier
 
 - **API Endpoint to View Records:**  
-  [http://34.58.153.8.nip.io/employee](http://34.58.153.8.nip.io/employee)  
-  *(Replace with your actual external IP if different)*
+  [http://34.58.153.8.nip.io/employee/](http://34.58.153.8.nip.io/employee/)
 
 ---
 
@@ -28,16 +27,12 @@ This repository contains a Spring Boot microservice application for managing emp
 
 - **Video Demonstration:**  
   [Google Drive - Kubernetes Demo Video](https://drive.google.com/file/d/your-demo-video-id/view?usp=sharing)  
-  *(Replace with your actual video link)*
 
 ### What’s shown in the video:
-1. **All Kubernetes Objects Deployed and Running:**  
+   - All Kubernetes Objects Deployed and Running
    - Deployments, Services, Ingress, ConfigMaps, Secrets, PersistentVolumeClaims for both API and database tiers.
-2. **API Call Retrieving Records from Database:**  
    - Using `/employee` endpoint to fetch employee records stored in PostgreSQL.
-3. **Kill API Microservice Pod and Show Regeneration:**  
    - Demonstrates self-healing by deleting the API pod and showing Kubernetes automatically recreates it.
-4. **Kill Database Pod and Show Regeneration with Persistent Data:**  
    - Deletes the PostgreSQL pod and shows it regenerates, with data preserved due to persistent volume claim.
 
 ---
@@ -81,6 +76,9 @@ kubectl apply -f k8s/app/ingress.yaml
 ## 📂 Project Structure
 
 - `src/main/java/` – Spring Boot source code
+- `src/main/resources/application.properties` –  Contains configuration for database connection, connection pooling, JPA settings, and server port.  
+- `src/main/resources/schema.sql` –  SQL script of the application's table, shared for reference to illustrate its structure.
+- `pom.xml` –  Maven configuration file that specifies project dependencies, the Java version, and build-related configurations required for the service.
 - `k8s/app/` – Kubernetes manifests for API tier
 - `k8s/db/` – Kubernetes manifests for PostgreSQL database
 - `Dockerfile` – Container build instructions
@@ -102,13 +100,6 @@ kubectl apply -f k8s/app/ingress.yaml
 
 ---
 
-## 📝 Notes
-
-- Ensure your Kubernetes cluster supports Ingress and Persistent Volumes.
-- Update external URLs and video links as needed for your environment.
-
----
-
 ## 👤 Author
 
-pushkarkhosla
+- **Pushkar Khosla (pushkar.khosla@nagarro.com)**
