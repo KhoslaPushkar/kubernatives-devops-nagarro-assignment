@@ -19,7 +19,7 @@ This is a Spring Boot microservice for managing employee records. It's built to 
 ## 🌐 Service API Tier
 
 - **API Endpoint to View Records:**  
-  [http://34.69.2.223.nip.io/employee/](http://34.69.2.223.nip.io/employee/)
+  [http://34.29.234.166.nip.io/employee/](http://34.29.234.166.nip.io/employee/)
 
 ---
 
@@ -52,10 +52,9 @@ docker push pushkarkhosla379/kubernatives-devops-nagarro-assignment:latest
 Apply manifests in the following order:
 
 ```sh
-kubectl apply -f k8s/db/postgres-db-pvc.yaml
 kubectl apply -f k8s/db/postgres-db-configmap.yaml
 kubectl apply -f k8s/db/postgres-db-secret.yaml
-kubectl apply -f k8s/db/postgres-db-deployment.yaml
+kubectl apply -f k8s/db/postgres-db-statefulset.yaml
 kubectl apply -f k8s/db/postgres-db-service.yaml
 
 kubectl apply -f k8s/app/springboot-deployment.yaml
@@ -66,10 +65,10 @@ kubectl apply -f k8s/app/ingress.yaml
 ### 3. Access the API
 
 - **View all employees:**  
-  `GET http://34.69.2.223.nip.io/employee/`
+  `GET http://34.29.234.166.nip.io/employee/`
 
 - **Create sample data:**  
-  `GET http://34.69.2.223.nip.io/employee/createSampleData`
+  `GET http://34.29.234.166.nip.io/employee/createSampleData`
 
 ---
 
