@@ -1,13 +1,10 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: postgres
-  labels:
-    app: postgres
 spec:
+  serviceName: "postgres"
   replicas: 1
-  strategy:
-    type: Recreate
   selector:
     matchLabels:
       app: postgres
@@ -38,10 +35,14 @@ spec:
                   name: db-secret
                   key: DB_PASSWORD
           volumeMounts:
-            - name: postgres-pv
+            - name: postgres-storage
               mountPath: /var/lib/postgresql/data
               subPath: pgdata
-      volumes:
-        - name: postgres-pv
-          persistentVolumeClaim:
-            claimName: db-postgres-pvc
+  volumeClaimTemplates:
+    - metadata:
+        name: postgres-storage
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 1Gi
