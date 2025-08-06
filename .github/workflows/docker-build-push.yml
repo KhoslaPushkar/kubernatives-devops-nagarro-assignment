@@ -28,7 +28,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/kubernatives-devops-nagarro-assignment:v2 .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/kubernatives-devops-nagarro-assignment:latest .
 
       - name: Push Docker image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/kubernatives-devops-nagarro-assignment:v2
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/kubernatives-devops-nagarro-assignment:latest
