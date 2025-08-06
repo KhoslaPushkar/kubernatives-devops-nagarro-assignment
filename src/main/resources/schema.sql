@@ -1,7 +1,6 @@
-CREATE TABLE IF NOT EXISTS
-  "employee" ( 
-	  	"id" bigint,
-	    "department" character varying(255),
-	    "email" character varying(255),
-	    "name" character varying(255) 
-	);
+CREATE TABLE IF NOT EXISTS employee (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  name VARCHAR(255),
+  department VARCHAR(255),
+  email VARCHAR(255)
+);
