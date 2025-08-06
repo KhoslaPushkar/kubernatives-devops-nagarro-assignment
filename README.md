@@ -19,14 +19,14 @@ This is a Spring Boot microservice for managing employee records. It's built to 
 ## 🌐 Service API Tier
 
 - **API Endpoint to View Records:**  
-  [http://34.58.153.8.nip.io/employee/](http://34.58.153.8.nip.io/employee/)
+  [http://34.69.2.223.nip.io/employee/](http://34.69.2.223.nip.io/employee/)
 
 ---
 
 ## 🎬 Screen Recording Video
 
 - **Video Demonstration:**  
-  [Google Drive - Kubernetes Demo Video](https://drive.google.com/file/d/your-demo-video-id/view?usp=sharing)  
+  [OneDrive – Access the Assignment Video Here](https://nagarro-my.sharepoint.com/:v:/p/pushkar_khosla/EU1maTUjDT1JvHTp7S3qfMwBA0WZqH9a2U4BtVP3CQge7g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=y4iuWK)  
 
 ### What’s shown in the video:
    - All Kubernetes Objects Deployed and Running
@@ -66,10 +66,10 @@ kubectl apply -f k8s/app/ingress.yaml
 ### 3. Access the API
 
 - **View all employees:**  
-  `GET http://34.58.153.8.nip.io/employee`
+  `GET http://34.69.2.223.nip.io/employee/`
 
 - **Create sample data:**  
-  `GET http://34.58.153.8.nip.io/employee/createSampleData`
+  `GET http://34.69.2.223.nip.io/employee/createSampleData`
 
 ---
 
